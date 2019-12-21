@@ -11,14 +11,14 @@ def directors_totals(nds)
   #total_values = directors_database[row_index][:movies][element_index][:worldwide_gross]
   
  
-  while row_index < directors_database.count do    #pulling the name for total{:name} 
-    name = directors_database[row_index][:name]
+  while row_index < nds.count do    #pulling the name for total{:name} 
+    name = nds[row_index][:name]
     totals[name] = 0 
     element_index = 0 
     
     
-    while element_index < directors_database[row_index][:movies].count do
-      values = directors_database[row_index][:movies][element_index][:worldwide_gross]
+    while element_index < nds[row_index][:movies].count do
+      values = nds[row_index][:movies][element_index][:worldwide_gross]
       element_index += 1 
       #trying to get all worldwide_gross for each director added
       totals[name] += values 
